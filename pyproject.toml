@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "albs-provenance-graph-poc"
+version = "0.1.0"
+description = "PoC read-model for ALBS-style provenance-aware dependency graphs"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Paweł Suchanecki" }
+]
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5.0",
+  "mypy>=1.10.0"
+]
+
+[project.scripts]
+albs-graph = "albs_graph.cli:main"
+
+[tool.setuptools]
+packages = ["albs_graph"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
